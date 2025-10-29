@@ -1,0 +1,30 @@
+#default config
+server:
+  port: 8081
+
+spring:
+  application:
+    name: spring_security
+  datasource:
+    url: jdbc_url
+    username: db_username
+    password: db_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
+
+#JWT Secret signing key and expiration
+jwt:
+  secret: your_secret
+  expiration: 3600000 #1 hour in miliseconds
